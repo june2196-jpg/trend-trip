@@ -1,14 +1,294 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+  <meta name="description" content="이미지 생성 AI에 바로 사용할 수 있는 고품질 프롬프트 100선을 카테고리별로 검색하고 복사하세요." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="이미지 생성 AI 프롬프트 100선" />
+  <meta property="og:description" content="실사, 제품, 캐릭터, SNS, 광고, 배경화면 등 이미지 생성에 바로 쓰는 프롬프트 모음." />
+  <meta property="og:type" content="website" />
+  <title>이미지 생성 AI 프롬프트 100선 | Prompt Atlas</title>
+  <link rel="canonical" href="https://example.com/" />
+  <link href="style.css" rel="stylesheet" />
+
+  <!-- Google AdSense
+    1. AdSense 승인 후 ca-pub-XXXXXXXXXXXXXXXX 값을 본인 게시자 ID로 교체하세요.
+    2. 승인 전에는 광고가 표시되지 않을 수 있습니다.
+  -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+  <header class="site-header">
+    <a class="brand" href="#home" data-view-link="home" aria-label="Prompt Atlas 홈">
+      <span class="brand-mark">PA</span>
+      <span>Prompt Atlas</span>
+    </a>
+    <nav aria-label="주요 메뉴">
+      <a href="#prompts" data-view-link="prompts">이미지 프롬프트</a>
+      <a href="#ai-assistant" data-view-link="ai-assistant">AI 업무 비서</a>
+      <a href="#chatgpt-work" data-view-link="chatgpt-work">챗GPT 활용법</a>
+      <a href="#guide" data-view-link="guide">운영 가이드</a>
+      <a href="#faq" data-view-link="faq">FAQ</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero page-view is-active" id="home" data-view="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Image AI Prompt Library</p>
+        <h1 id="hero-title">이미지 생성 AI 프롬프트 100선</h1>
+        <p class="lead">Midjourney, DALL-E, Stable Diffusion, Firefly 등에서 응용할 수 있는 한국어 프롬프트를 목적별로 정리했습니다.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#prompts" data-view-link="prompts">프롬프트 보기</a>
+          <a class="button secondary" href="#ai-assistant" data-view-link="ai-assistant">AI 업무 비서 보기</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="visual-panel panel-one"></div>
+        <div class="visual-panel panel-two"></div>
+        <div class="visual-panel panel-three"></div>
+      </div>
+    </section>
+
+    <section class="ad-band page-view is-active" data-view="home" aria-label="상단 광고">
+      <span>Advertisement</span>
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+        data-ad-slot="1111111111"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    </section>
+
+    <section class="toolbar-section page-view" id="prompts" data-view="prompts" aria-labelledby="prompt-title">
+      <div class="section-heading">
+        <p class="eyebrow">Copy and Create</p>
+        <h2 id="prompt-title">목적별 프롬프트</h2>
+      </div>
+      <div class="tools" role="search">
+        <label class="search-box">
+          <span>검색</span>
+          <input id="searchInput" type="search" placeholder="예: 제품, 캐릭터, 인스타, 풍경" autocomplete="off" />
+        </label>
+        <label class="category-box">
+          <span>카테고리</span>
+          <select id="categorySelect">
+            <option value="all">전체</option>
+          </select>
+        </label>
+      </div>
+      <p class="result-count" id="resultCount" aria-live="polite"></p>
+      <div class="prompt-grid" id="promptGrid"></div>
+    </section>
+
+    <section class="assistant-page page-view" id="ai-assistant" data-view="ai-assistant" aria-labelledby="ai-assistant-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">AI Work Assistant</p>
+          <h2 id="ai-assistant-title">실무 중심 AI 업무 비서 프롬프트</h2>
+        </div>
+      </div>
+      <div class="assistant-group">
+        <div class="assistant-heading">
+          <span>Developer / IT Planning</span>
+          <h3>개발자/IT 기획용</h3>
+        </div>
+        <div class="assistant-grid">
+          <article class="assistant-card">
+            <span class="badge">코드 생성</span>
+            <h4>SBGrid/SBUX UI 코드 자동 생성</h4>
+            <p>특정 UI 프레임워크 규칙을 주고 화면 요구사항을 컴포넌트 코드로 변환합니다.</p>
+            <code>너는 프론트엔드 개발자야. SBGrid와 SBUX를 사용해서 [화면 목적]을 구현하려고 해. 컬럼 정의, 검색 조건, 버튼 액션, 이벤트 흐름을 포함한 예시 코드를 작성해줘. 코드에는 주석을 최소화하고 실제 프로젝트에 붙여 넣기 쉬운 형태로 정리해줘.</code>
+            <button class="copy-button" type="button" data-prompt="너는 프론트엔드 개발자야. SBGrid와 SBUX를 사용해서 [화면 목적]을 구현하려고 해. 컬럼 정의, 검색 조건, 버튼 액션, 이벤트 흐름을 포함한 예시 코드를 작성해줘. 코드에는 주석을 최소화하고 실제 프로젝트에 붙여 넣기 쉬운 형태로 정리해줘.">복사</button>
+          </article>
+          <article class="assistant-card">
+            <span class="badge">문서화</span>
+            <h4>레거시 코드 문서화</h4>
+            <p>오래된 코드의 역할, 입력값, 출력값, 의존성, 리스크를 문서로 정리합니다.</p>
+            <code>아래 레거시 코드를 분석해서 기능 요약, 주요 함수 흐름, 외부 의존성, 수정 시 주의점, 리팩터링 후보를 표로 정리해줘. 비개발자도 이해할 수 있는 요약도 함께 작성해줘.</code>
+            <button class="copy-button" type="button" data-prompt="아래 레거시 코드를 분석해서 기능 요약, 주요 함수 흐름, 외부 의존성, 수정 시 주의점, 리팩터링 후보를 표로 정리해줘. 비개발자도 이해할 수 있는 요약도 함께 작성해줘.">복사</button>
+          </article>
+          <article class="assistant-card">
+            <span class="badge">API</span>
+            <h4>API 명세서 초안 작성</h4>
+            <p>기능 설명만으로 엔드포인트, 파라미터, 응답 예시, 에러 케이스를 만듭니다.</p>
+            <code>다음 기능 요구사항을 바탕으로 REST API 명세서 초안을 작성해줘. 엔드포인트, 메서드, 요청 파라미터, 응답 JSON, 에러 코드, 인증 여부, 프론트엔드 연동 메모를 포함해줘.</code>
+            <button class="copy-button" type="button" data-prompt="다음 기능 요구사항을 바탕으로 REST API 명세서 초안을 작성해줘. 엔드포인트, 메서드, 요청 파라미터, 응답 JSON, 에러 코드, 인증 여부, 프론트엔드 연동 메모를 포함해줘.">복사</button>
+          </article>
+        </div>
+      </div>
+
+      <div class="assistant-group">
+        <div class="assistant-heading">
+          <span>HR / Management</span>
+          <h3>인사(HR)/경영용</h3>
+        </div>
+        <div class="assistant-grid">
+          <article class="assistant-card">
+            <span class="badge">KPI</span>
+            <h4>성과 지표 설정 가이드</h4>
+            <p>직무별 목표를 측정 가능한 KPI와 실행 과제로 바꿉니다.</p>
+            <code>아래 직무와 사업 목표를 기준으로 분기 KPI를 설계해줘. 정량 지표, 정성 지표, 측정 방법, 목표 수치 예시, 주간 점검 질문을 표로 작성해줘.</code>
+            <button class="copy-button" type="button" data-prompt="아래 직무와 사업 목표를 기준으로 분기 KPI를 설계해줘. 정량 지표, 정성 지표, 측정 방법, 목표 수치 예시, 주간 점검 질문을 표로 작성해줘.">복사</button>
+          </article>
+          <article class="assistant-card">
+            <span class="badge">채용</span>
+            <h4>면접 질문 리스트 생성</h4>
+            <p>직무 역량, 협업 방식, 문제 해결력 중심의 면접 질문을 구성합니다.</p>
+            <code>[직무명] 후보자를 평가하기 위한 면접 질문 20개를 만들어줘. 기술 역량, 협업 경험, 문제 해결력, 조직 적합성으로 분류하고 각 질문의 평가 포인트도 함께 적어줘.</code>
+            <button class="copy-button" type="button" data-prompt="[직무명] 후보자를 평가하기 위한 면접 질문 20개를 만들어줘. 기술 역량, 협업 경험, 문제 해결력, 조직 적합성으로 분류하고 각 질문의 평가 포인트도 함께 적어줘.">복사</button>
+          </article>
+          <article class="assistant-card">
+            <span class="badge">공지</span>
+            <h4>사내 공지문 작성</h4>
+            <p>딱딱한 안내문을 명확하고 읽기 쉬운 공지 형식으로 정리합니다.</p>
+            <code>아래 내용을 사내 공지문으로 작성해줘. 제목, 핵심 요약, 적용 대상, 일정, 직원이 해야 할 일, 문의처를 포함하고 정중하지만 간결한 톤으로 만들어줘.</code>
+            <button class="copy-button" type="button" data-prompt="아래 내용을 사내 공지문으로 작성해줘. 제목, 핵심 요약, 적용 대상, 일정, 직원이 해야 할 일, 문의처를 포함하고 정중하지만 간결한 톤으로 만들어줘.">복사</button>
+          </article>
+        </div>
+      </div>
+
+      <div class="assistant-group">
+        <div class="assistant-heading">
+          <span>Self-development / Education</span>
+          <h3>자기계발 및 교육용</h3>
+        </div>
+        <div class="assistant-grid">
+          <article class="assistant-card">
+            <span class="badge">학생</span>
+            <h4>논문 요약과 비판적 사고 질문</h4>
+            <p>논문을 단순 요약이 아니라 주장, 근거, 한계, 토론 질문으로 분해합니다.</p>
+            <code>아래 논문 내용을 연구 목적, 핵심 주장, 방법론, 주요 결과, 한계점으로 요약해줘. 마지막에는 수업 토론에 사용할 비판적 사고 질문 5개를 만들어줘.</code>
+            <button class="copy-button" type="button" data-prompt="아래 논문 내용을 연구 목적, 핵심 주장, 방법론, 주요 결과, 한계점으로 요약해줘. 마지막에는 수업 토론에 사용할 비판적 사고 질문 5개를 만들어줘.">복사</button>
+          </article>
+          <article class="assistant-card">
+            <span class="badge">학생</span>
+            <h4>외국어 회화 파트너 설정</h4>
+            <p>수준과 상황을 지정해 회화 연습, 교정, 표현 확장을 동시에 진행합니다.</p>
+            <code>너는 [언어] 회화 파트너야. 내 수준은 [초급/중급/고급]이고 오늘 주제는 [상황]이야. 한 문장씩 대화하고, 내가 답하면 자연스러운 표현으로 고쳐준 뒤 더 좋은 표현 2개를 제안해줘.</code>
+            <button class="copy-button" type="button" data-prompt="너는 [언어] 회화 파트너야. 내 수준은 [초급/중급/고급]이고 오늘 주제는 [상황]이야. 한 문장씩 대화하고, 내가 답하면 자연스러운 표현으로 고쳐준 뒤 더 좋은 표현 2개를 제안해줘.">복사</button>
+          </article>
+          <article class="assistant-card">
+            <span class="badge">학부모</span>
+            <h4>학년별 독후감 가이드</h4>
+            <p>초등 1~4학년처럼 발달 단계에 맞는 질문과 문장 틀을 제공합니다.</p>
+            <code>초등 [학년] 아이가 [책 제목]을 읽고 독후감을 쓸 수 있도록 도와줘. 줄거리 확인 질문, 느낀 점 질문, 생활 연결 질문, 아이가 따라 쓸 수 있는 문장 틀을 학년에 맞게 만들어줘.</code>
+            <button class="copy-button" type="button" data-prompt="초등 [학년] 아이가 [책 제목]을 읽고 독후감을 쓸 수 있도록 도와줘. 줄거리 확인 질문, 느낀 점 질문, 생활 연결 질문, 아이가 따라 쓸 수 있는 문장 틀을 학년에 맞게 만들어줘.">복사</button>
+          </article>
+          <article class="assistant-card">
+            <span class="badge">학부모</span>
+            <h4>창의력 문제지 생성</h4>
+            <p>놀이형 질문, 관찰력, 상상력, 논리력을 섞은 맞춤형 활동지를 만듭니다.</p>
+            <code>초등 [학년] 아이를 위한 창의력 문제지 10문항을 만들어줘. 관찰력, 상상력, 논리력, 표현력을 골고루 포함하고 각 문항에는 부모가 도와줄 힌트와 확장 질문을 붙여줘.</code>
+            <button class="copy-button" type="button" data-prompt="초등 [학년] 아이를 위한 창의력 문제지 10문항을 만들어줘. 관찰력, 상상력, 논리력, 표현력을 골고루 포함하고 각 문항에는 부모가 도와줄 힌트와 확장 질문을 붙여줘.">복사</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="work-guide page-view" id="chatgpt-work" data-view="chatgpt-work" aria-labelledby="chatgpt-work-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ChatGPT for Work</p>
+          <h2 id="chatgpt-work-title">업무 효율 높이는 챗GPT 활용법</h2>
+        </div>
+      </div>
+      <div class="work-grid">
+        <article class="work-card">
+          <span class="work-number">01</span>
+          <h3>회의록 정리</h3>
+          <p>녹취록이나 메모를 붙여 넣고 의사결정, 액션 아이템, 담당자, 마감일로 나누어 정리하게 하세요.</p>
+          <code>다음 회의 메모를 핵심 결정사항, 할 일, 리스크로 정리해줘.</code>
+        </article>
+        <article class="work-card">
+          <span class="work-number">02</span>
+          <h3>이메일 초안</h3>
+          <p>목적, 받는 사람, 원하는 톤, 포함해야 할 내용을 지정하면 반복적인 업무 메일 작성 시간을 줄일 수 있습니다.</p>
+          <code>정중하지만 간결한 톤으로 일정 변경 요청 메일을 작성해줘.</code>
+        </article>
+        <article class="work-card">
+          <span class="work-number">03</span>
+          <h3>보고서 구조화</h3>
+          <p>자료를 바로 문서로 쓰기보다 목차, 핵심 메시지, 근거 데이터, 결론 순서로 먼저 구조화하면 품질이 안정됩니다.</p>
+          <code>아래 자료를 임원 보고서 목차와 1페이지 요약으로 바꿔줘.</code>
+        </article>
+        <article class="work-card">
+          <span class="work-number">04</span>
+          <h3>엑셀 함수와 데이터 정리</h3>
+          <p>원하는 결과와 현재 컬럼 구조를 설명하면 함수, 피벗 기준, 정리 절차를 빠르게 얻을 수 있습니다.</p>
+          <code>A열 날짜와 B열 매출을 월별 합계로 집계하는 방법을 알려줘.</code>
+        </article>
+        <article class="work-card">
+          <span class="work-number">05</span>
+          <h3>고객 응대 문구</h3>
+          <p>불만, 환불, 배송 지연처럼 민감한 상황은 공감, 설명, 대안, 후속 조치 순서로 답변을 만들게 하세요.</p>
+          <code>배송 지연 고객에게 보낼 사과 메시지를 브랜드 톤에 맞게 작성해줘.</code>
+        </article>
+        <article class="work-card">
+          <span class="work-number">06</span>
+          <h3>아이디어 확장</h3>
+          <p>블로그, 광고, 상세페이지, 이미지 프롬프트를 만들 때 타깃과 목표를 함께 주면 바로 실행 가능한 아이디어가 나옵니다.</p>
+          <code>AI 이미지 프롬프트 블로그의 검색 유입용 글감 20개를 제안해줘.</code>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-layout page-view" id="guide" data-view="guide">
+      <article>
+        <p class="eyebrow">Quick Guide</p>
+        <h2>프롬프트를 수익형 콘텐츠로 운영하는 법</h2>
+        <p>검색 유입을 만들려면 단순 목록보다 사용 목적, 예시 결과, 추천 모델, 수정 팁을 함께 제공하는 편이 좋습니다. 이 페이지는 100개 목록을 기본으로 두고, 이후 인기 키워드별 상세 글을 추가하기 쉬운 구조입니다.</p>
+      </article>
+      <aside class="tip-list" aria-label="운영 팁">
+        <div>
+          <strong>SEO</strong>
+          <span>제목, 설명, 카테고리명을 검색어 중심으로 유지하세요.</span>
+        </div>
+        <div>
+          <strong>AdSense</strong>
+          <span>승인 전에는 충분한 원문 콘텐츠와 개인정보처리방침 페이지를 준비하세요.</span>
+        </div>
+        <div>
+          <strong>확장</strong>
+          <span>프롬프트별 결과 이미지와 실패 사례를 추가하면 체류 시간이 늘어납니다.</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="ad-band page-view" data-view="guide" aria-label="하단 광고">
+      <span>Advertisement</span>
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+        data-ad-slot="2222222222"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    </section>
+
+    <section class="faq page-view" id="faq" data-view="faq" aria-labelledby="faq-title">
+      <p class="eyebrow">FAQ</p>
+      <h2 id="faq-title">자주 묻는 질문</h2>
+      <details>
+        <summary>이 페이지를 Cloudflare Pages에 바로 배포할 수 있나요?</summary>
+        <p>네. 정적 파일만 사용하므로 저장소를 Cloudflare Pages에 연결하고 빌드 명령 없이 루트 디렉터리를 배포하면 됩니다.</p>
+      </details>
+      <details>
+        <summary>AdSense 코드는 어디를 바꾸면 되나요?</summary>
+        <p><code>index.html</code>의 <code>ca-pub-XXXXXXXXXXXXXXXX</code>와 <code>data-ad-slot</code> 값을 본인 AdSense 계정의 게시자 ID와 광고 단위 ID로 교체하세요.</p>
+      </details>
+      <details>
+        <summary>프롬프트를 더 추가하려면 어떻게 하나요?</summary>
+        <p><code>main.js</code>의 <code>prompts</code> 배열에 같은 형식의 항목을 추가하면 검색과 필터에 자동 반영됩니다.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Prompt Atlas - 이미지 생성 AI 프롬프트 라이브러리</p>
+    <p class="footer-note">AdSense 승인을 위해 실제 운영 시 문의처, 개인정보처리방침, 사이트 소개 페이지를 추가하세요.</p>
+  </footer>
+
+  <script defer src="main.js"></script>
 </body>
 </html>
